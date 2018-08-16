@@ -56,7 +56,7 @@ const columns = [
 
 
 const gameboard = document.querySelector('.gameboard')
-console.log
+
 
 // const submarine = document.createElement('div');
 
@@ -71,7 +71,6 @@ console.log
 
 function randomIntegerUpTo(max) {
     return Math.floor(Math.random() * (max + 1));
-
 }
 
 const selectRowOrColumn = Math.floor(Math.random() * 2);
@@ -106,15 +105,47 @@ if (randomColumnGenerator === 5){
 
 console.log(submarine)
 
-
-
-
-
+const guessFeedbackElement = document.querySelector('.guess-feedback');
 
 gameboard.addEventListener('click', function (event) {
-    event.target.classList.add('shot');
-    console.log(event);
-})
+    const button = event.target;
+    console.log(button);
+    
+    const clickedIndex = Number(button.getAttribute('data-index'));
+    
+    console.log(clickedIndex);
+    
+    if (clickedIndex === Number(submarine[0].dataset.index) || clickedIndex === Number(submarine[1].dataset.index)) {
+        guessFeedbackElement.innerHTML = "Hit!";
+    } else {
+        guessFeedbackElement.innerHTML = "Miss!";
+    }
+});
+
+console.log(submarine[0].dataset.index,submarine[1].dataset.index);
+
+
+    // for (let i = 0; i < 36; i++) {
+    //       const colorOptionElement = colorOptionElements[i];
+    //       colorOptionElement.addEventListener(
+    //         'click',
+    //         handleOptionClick
+    //       );
+    //     }
+
+
+//     event.target.classList.add('shot');
+//     console.log(event);
+// )
+    
+
+
+
+
+// gameboard.addEventListener('click', function (event) {
+//     event.target.classList.add('shot');
+//     console.log(event);
+// })
 
 // let subIndexes = [];
 

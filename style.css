@@ -62,7 +62,7 @@ h1 {
 .reset {
     text-align: center;
     font-size: 40px; 
-    margin: 15px auto;
+    margin: 10px auto 0 auto;
     display: flex;
     font-family: 'Hanalei Fill', cursive;
 }
@@ -79,4 +79,9 @@ h1 {
 
 h3{
     font-family: 'Hanalei Fill', cursive;
+}
+
+.guess-feedback{
+    margin: 0;
+    
 }
