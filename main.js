@@ -1,4 +1,3 @@
-window.onload = function () { }
 
 const box0 = document.querySelector('.box0')
 const box1 = document.querySelector('.box1')
@@ -37,14 +36,13 @@ const box33 = document.querySelector('.box33')
 const box34 = document.querySelector('.box34')
 const box35 = document.querySelector('.box35')
 
-
 const rows = [
     [box0, box1, box2, box3, box4, box5],
     [box6, box7, box8, box9, box10, box11],
     [box12, box13, box14, box15, box16, box17],
     [box18, box19, box20, box21, box22, box23],
-    [box24, box25, box26, box27, box28, box29]
-    [box30, box31, box32, box33, box34, box35]
+    [box24, box25, box26, box27, box28, box29],
+    [box30, box31, box32, box33, box34, box35],
 ]
 
 const columns = [
@@ -58,49 +56,161 @@ const columns = [
 
 
 const gameboard = document.querySelector('.gameboard')
+console.log
 
-/*
-gameboard.addEventListener('click', playerMove);
-  */
+// const submarine = document.createElement('div');
 
-
-function createSubmarine() {
-    const submarine = document.createElement('div');
-    submarine.classList.add('submarine');
-    // or submarine.setAttribute('class', 'submarine');
-
-
-    document.body.appendChild(submarine);
-
-    setInterval(function () {
-        submarine.style.left = `${Math.random() * gameboard.innerWidth}px`;
-        submarine.style.top = `${Math.random() * gameboard.innerHeight}px`;
-    }, 1000);
-
-    submarine.addEventListener('click', function (event) {
-        event.target.classList.add('shot');
-        // setTimeout(function () {
-        //   submarine.parentNode.removeChild(submarine);
-        //   checkForWinner();     
-    // }, 500);
-})
+// function createSubmarine() {
+//     submarine.classList.add('submarine');
+//     // document.querySelector('.sub.hidde').appendChild(submarine);
+    
+//     return submarine;
+// }
+ 
 
 
-
-
-
-
-
-return submarine;
-    }
-
-for (let i = 0; i < rows.length; i++) {
-    createSubmarine();
+function randomIntegerUpTo(max) {
+    return Math.floor(Math.random() * (max + 1));
+    
 }
 
+const selectRowOrColumn = Math.floor(Math.random()*2);
 
-  //end of windows.onload
+const randomRowGenerator= Math.floor(Math.random()*6);
+const randomColumnGenerator= Math.floor(Math.random()*6);
 
-  /* function playerMove() {
-    console.log('submarine');
-  } */
+newArray = [columns, rows];
+
+const newVar = newArray[selectRowOrColumn];
+const abc = newVar[randomRowGenerator]
+const def = abc[randomColumnGenerator]
+console.log(abc)
+console.log(def)
+
+// console.log(newArray);
+
+const submarine = [];
+submarine.push(def);
+console.log(submarine);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+gameboard.addEventListener('click', function (event) {
+    event.target.classList.add('shot');
+    console.log(event);
+})
+
+// let subIndexes = [];
+
+// subIndexes = randomIntegerUpTo(3);
+
+
+
+// function getRandomSubmarine() {
+    //     let subIndexes = [];
+    //     while (subIndexes.length < 4) {
+        //         const randomIndex = randomIntegerUpTo(37 - 1);
+        //         if (!subIndexes.includes(randomIndex)) {
+            //             subIndexes.push(randomIndex);
+            //         }
+            //     }
+            //     const randomSub = [];
+            //     for (let i = 0; i < subIndexes.length; i++) {
+                //         randomSub.push(
+                    //             submarine[subIndexes[i]]
+                    //         );
+                    //     }
+                    //     return randomSub;
+// }
+
+// // const colorToGuessElement = document.querySelector('.color-to-guess');
+// // const colorOptionElements = document.querySelectorAll('.color-option');
+
+// let submarineHolder;
+
+// // Starts a round of the game.
+// function startRound() {
+    //   const randomSub = getRandomSubmarine();
+    //   // Picking a random "correct" color.
+    //   submarineHolder = randomIntegerUpTo(3);
+    //   // Setting "color to guess" text.
+    // //   const correctColorName = randomSub[submarineHolder].name;
+    // //   colorToGuessElement.innerHTML = correctColorName;
+    
+    //   for (let i = 0; i < 4; i++) {
+        //     const submarine = randomSub[i];
+        //     // const colorOptionElement = colorOptionElements[i];
+        //     // colorOptionElement.style.backgroundColor = color.hexadecimal;
+        //   }
+        // }
+        
+        // startRound();
+        
+        // const guessFeedbackElement = document.querySelector('.guess-feedback');
+
+// function handleOptionClick(event) {
+//   const button = event.target;
+//   const clickedIndex = Number(button.getAttribute('data-index'));
+//   if (clickedIndex === submarineHolder) {
+//     guessFeedbackElement.innerHTML = "Hit!";
+//   } else {
+//     guessFeedbackElement.innerHTML = "Miss!";
+//   }
+// }
+
+// for (let i = 0; i < rows.length; i++) {
+//   const colorOptionElement = colorOptionElements[i];
+//   colorOptionElement.addEventListener(
+//     'click',
+//     handleOptionClick
+//   );
+// }
+
+
+
+
+
+// submarine.style.left = `${Math.random() * window.innerWidth}px`;
+// submarine.style.top = `${Math.random() * window.innerHeight}px`;
+// submarine.setAttribute('class', 'submarine');
+
+// setInterval(function () {
+//     submarine.style.left = `${Math.random() * gameboard.innerWidth}px`;
+//     submarine.style.top = `${Math.random() * gameboard.innerHeight}px`;
+// }, 1000);
+//doesnt work with gameboard.
+
+
+// setTimeout(function () {
+//   submarine.parentNode.removeChild(submarine);
+//   checkForWinner();     
+// }, 500);
+
+
+
+
+
+// for (let i = 0; i < 4; i++) {
+//     createSubmarine();
+// }
+
+
