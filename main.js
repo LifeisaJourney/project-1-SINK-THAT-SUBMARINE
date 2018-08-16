@@ -63,21 +63,21 @@ console.log
 // function createSubmarine() {
 //     submarine.classList.add('submarine');
 //     // document.querySelector('.sub.hidde').appendChild(submarine);
-    
+
 //     return submarine;
 // }
- 
+
 
 
 function randomIntegerUpTo(max) {
     return Math.floor(Math.random() * (max + 1));
-    
+
 }
 
-const selectRowOrColumn = Math.floor(Math.random()*2);
+const selectRowOrColumn = Math.floor(Math.random() * 2);
 
-const randomRowGenerator= Math.floor(Math.random()*6);
-const randomColumnGenerator= Math.floor(Math.random()*6);
+const randomRowGenerator = Math.floor(Math.random() * 6);
+const randomColumnGenerator = Math.floor(Math.random() * 6);
 
 newArray = [columns, rows];
 
@@ -89,25 +89,22 @@ console.log(def)
 
 // console.log(newArray);
 
-const submarine = [];
+let submarine = [];
 submarine.push(def);
-console.log(submarine);
 
+// let boundary = [rows[0][5], rows[0][0], columns[0][5], columns[5][5]]
 
+// if (!boundary.includes(submarine[0])) {
+//     console.log(submarine);
+// }
 
+if (randomColumnGenerator === 5){
+    submarine.push(abc[randomColumnGenerator-1])
+} else {
+    submarine.push(abc[randomColumnGenerator+1])
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(submarine)
 
 
 
@@ -155,16 +152,16 @@ gameboard.addEventListener('click', function (event) {
     //   // Setting "color to guess" text.
     // //   const correctColorName = randomSub[submarineHolder].name;
     // //   colorToGuessElement.innerHTML = correctColorName;
-    
+
     //   for (let i = 0; i < 4; i++) {
         //     const submarine = randomSub[i];
         //     // const colorOptionElement = colorOptionElements[i];
         //     // colorOptionElement.style.backgroundColor = color.hexadecimal;
         //   }
         // }
-        
+
         // startRound();
-        
+
         // const guessFeedbackElement = document.querySelector('.guess-feedback');
 
 // function handleOptionClick(event) {
