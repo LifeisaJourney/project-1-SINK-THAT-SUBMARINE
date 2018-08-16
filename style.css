@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    width: 900px;
+    height: 900px;
+    margin: 0 auto;
+    background: #FFCD00;
+}
+
+h1 {
+    text-align: center; 
+    margin: 40px auto;
+    font-family: 'Hanalei Fill', cursive;
+    font-size: 50px;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    flex-direction: row;
+}
+
+.box {
+    background-color: aquamarine;
+    display: flex;
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+}
+
+.reset {
+    text-align: center;
+    font-size: 20px;
+    
+}
+.hidden {
+    display: none;
+}
