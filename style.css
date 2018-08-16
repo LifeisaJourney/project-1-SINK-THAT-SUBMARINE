@@ -15,6 +15,7 @@ h1 {
     font-family: 'Hanalei Fill', cursive;
     font-size: 70px;
 }
+
 main {
     display: flex;
     flex-wrap: wrap;
@@ -35,16 +36,22 @@ main {
 .reset {
     text-align: center;
     font-size: 40px; 
-  margin: 20px auto;
-  display: flex;
-  font-family: 'Hanalei Fill', cursive;
-  
-    
+    margin: 20px auto;
+    display: flex;
+    font-family: 'Hanalei Fill', cursive;
 }
-.hidden {
+
+/* not hidden */
+.hidde {
    display: none;
 }
 
-.submarine{
-    display:none;
+.submarine {
+    background-color: green;
+    /* change to image/css for finishing touches */
+
+}
+
+.shot {
+    background-color: red;
 }
