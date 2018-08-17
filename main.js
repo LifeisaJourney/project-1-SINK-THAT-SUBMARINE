@@ -37,36 +37,27 @@ const box34 = document.querySelector('.box34')
 const box35 = document.querySelector('.box35')
 
 const rows = [
-    [box0, box1, box2, box3, box4, box5],
-    [box6, box7, box8, box9, box10, box11],
-    [box12, box13, box14, box15, box16, box17],
-    [box18, box19, box20, box21, box22, box23],
-    [box24, box25, box26, box27, box28, box29],
-    [box30, box31, box32, box33, box34, box35],
+  [box0, box1, box2, box3, box4, box5],
+  [box6, box7, box8, box9, box10, box11],
+  [box12, box13, box14, box15, box16, box17],
+  [box18, box19, box20, box21, box22, box23],
+  [box24, box25, box26, box27, box28, box29],
+  [box30, box31, box32, box33, box34, box35],
 ]
 
 const columns = [
-    [box0, box6, box12, box18, box24, box30],
-    [box1, box7, box13, box19, box25, box31],
-    [box2, box8, box14, box20, box26, box32],
-    [box3, box9, box15, box21, box27, box33],
-    [box4, box10, box16, box22, box28, box34],
-    [box5, box11, box17, box23, box29, box35],
+  [box0, box6, box12, box18, box24, box30],
+  [box1, box7, box13, box19, box25, box31],
+  [box2, box8, box14, box20, box26, box32],
+  [box3, box9, box15, box21, box27, box33],
+  [box4, box10, box16, box22, box28, box34],
+  [box5, box11, box17, box23, box29, box35],
 ]
 
 
 const gameboard = document.querySelector('.gameboard')
+const boxSelector = document.querySelectorAll('.box');
 
-
-// const submarine = document.createElement('div');
-// function createSubmarine() {
-//     submarine.classList.add('submarine');
-//     // document.querySelector('.sub.hidde').appendChild(submarine);
-//     return submarine;
-// }
-// function randomIntegerUpTo(max) {
-//     return Math.floor(Math.random() * (max + 1));
-// }
 
 const selectRowOrColumn = Math.floor(Math.random() * 2);
 const randomRowGenerator = Math.floor(Math.random() * 6);
@@ -76,193 +67,96 @@ newArray = [columns, rows];
 const newArraySelection = newArray[selectRowOrColumn];
 const aSpecificRow = newArraySelection[randomRowGenerator]
 const aSpecificBox = aSpecificRow[randomColumnGenerator]
-// console.log(aSpecificRow)
-// console.log(aSpecificBox)
-// console.log(newArray);
 
-let submarine = [];
-submarine.push(aSpecificBox);
+let submarine = 0;
+
+for (let i = 0; i < boxSelector.length; i++) {
+  const randomLocationGenerator = Math.floor(Math.random() * (boxSelector.length + 1));
+  submarine = randomLocationGenerator;
+}
+console.log(submarine);
+
+
+// submarine.push(aSpecificBox);
+
+
+// if (randomColumnGenerator === 5) {
+//   submarine.push(aSpecificRow[randomColumnGenerator - 1])
+// } else {
+//   submarine.push(aSpecificRow[randomColumnGenerator + 1])
+// }
 // console.log(submarine)
 
-// let boundary = [rows[0][5], rows[0][0], columns[0][5], columns[5][5]]
-// if (!boundary.includes(submarine[0])) {
-//     console.log(submarine);
-// }
 
-if (randomColumnGenerator === 5) {
-    submarine.push(aSpecificRow[randomColumnGenerator - 1])
-} else {
-    submarine.push(aSpecificRow[randomColumnGenerator + 1])
-}
-console.log(submarine)
+//location of the submarine
+// let onePartOfSub = Number(submarine[0].dataset.index);
+// let secPartOfSub = Number(submarine[1].dataset.index);
 
 
-
-
-let zeroVar = Number(submarine[0].dataset.index);
-let oneVar = Number(submarine[1].dataset.index);
 const guessFeedbackElement = document.querySelector('.guess-feedback');
 gameboard.addEventListener('click', function (event) {
-    const button = event.target;
-    console.log(button);
-    const clickedIndex = Number(button.getAttribute('data-index'));
-    console.log(clickedIndex);
-    if (clickedIndex === Number(submarine[0].dataset.index) || clickedIndex === Number(submarine[1].dataset.index)) {
-        guessFeedbackElement.innerHTML = "Hit!";
-        button.classList.add('shot');
-        //remember to remove shot
-    } else {
-        guessFeedbackElement.innerHTML = "Miss!";
-        if (zeroVar.includes(Number(columns[0].dataset.index)) && oneVar.includes(Number(columns[0].dataset.index))) {
-            // Number(submarine[1].dataset.index) += 1;
-            // Number(submarine[0].dataset.index) += 1;
-            console.log(Number(submarine[0].dataset.index), Number(submarine[1].dataset.index));
-        }
-        // else if {
+  const button = event.target;
+  // console.log(button);
+
+  const clickedIndex = Number(button.getAttribute('data-index'));
+  console.log(clickedIndex);
+  if (clickedIndex === submarine) {
+    guessFeedbackElement.innerHTML = "HIT!";
+    console.log("HIT!");
+    alert('WINNER!');
+
+    // )
+  } else {
+    guessFeedbackElement.innerHTML = "MISS!";
+    console.log("MISS!");
+  }
 
 
 
 
-    }    
+
+
+
+
+
+
+
+  // if (clickedIndex === Number(submarine[0].dataset.index) || clickedIndex === Number(submarine[1].dataset.index)) {
+  //   guessFeedbackElement.innerHTML = "Hit!";
+  //   button.classList.add('shot');
+  // } else {
+  //   guessFeedbackElement.innerHTML = "Miss!";
+  //   for (let i = 0; i < 6; i++) {
+  //     let shortCutObject = columns[0][i].dataset.index;
+  //     console.log(shortCutObject);
+  //     console.log(typeof shortCutObject);
+  //     //this holds columns[0][i].dataset.index in the for loop
+  //     if (onePartOfSub.includes(Number(columns[0][i].dataset.index)) && secPartOfSub.includes(Number(columns[0][i].dataset.index))) {
+  //       // Number(submarine[1].dataset.index) += 1;
+  //       // Number(submarine[0].dataset.index) += 1;
+  //       console.log(Number(submarine[0].dataset.index), Number(submarine[1].dataset.index));
+  //     }
+  //   }
+  // }
 });
 
-console.log(submarine[0], submarine[1]);
-console.log(submarine[0].dataset.index, submarine[1].dataset.index);
-console.log(zeroVar, oneVar);
-console.log('str', Number((columns[0][1]).dataset.index));
+// function myReSetFunction() {
+//   document.getElementById(".reset").reset();
 
-
-// Number((columns[0][1]).dataset.index);
-// 6
-
-// typeof Number((columns[0][1]).dataset.index)
-// "number"
-
-// Number((columns[0]).dataset.index)
-// VM7024:1 Uncaught TypeError: Cannot read property 'index' of undefined
-//     at <anonymous>:1:29
-
-
-// ((columns[0][1]).dataset.index)
-// "6"
-// typeof ((columns[0][1]).dataset.index)
-// "string"
-
-
-// for (let i = 0; i < 36; i++) {
-    //       const colorOptionElement = colorOptionElements[i];
-    //       colorOptionElement.addEventListener(
-        //         'click',
-        //         handleOptionClick
-        //       );
-    //     }
-
-
-//     event.target.classList.add('shot');
-//     console.log(event);
-// )
-
-
-
-
-
-// gameboard.addEventListener('click', function (event) {
-//     event.target.classList.add('shot');
-//     console.log(event);
-// })
-
-// let subIndexes = [];
-
-// subIndexes = randomIntegerUpTo(3);
-
-
-
-// function getRandomSubmarine() {
-    //     let subIndexes = [];
-    //     while (subIndexes.length < 4) {
-        //         const randomIndex = randomIntegerUpTo(37 - 1);
-        //         if (!subIndexes.includes(randomIndex)) {
-            //             subIndexes.push(randomIndex);
-            //         }
-            //     }
-            //     const randomSub = [];
-            //     for (let i = 0; i < subIndexes.length; i++) {
-                //         randomSub.push(
-                    //             submarine[subIndexes[i]]
-                    //         );
-                    //     }
-                    //     return randomSub;
 // }
+            // console.log(submarine[0], submarine[1]);
+// //returns div class with box number
+// console.log(submarine[0].dataset.index, submarine[1].dataset.index);
+// //returns string of values like 5 11 but "5" and "11"
+// // console.log(typeof submarine[0].dataset.index, submarine[1].dataset.index);
+// // string 11
+// console.log(onePartOfSub, secPartOfSub);
+// // returns number of values like 5 and 11
+// // console.log(typeof onePartOfSub, secPartOfSub);
+// //number 11
+// console.log('str', Number((columns[0][1]).dataset.index));
+// // string number
 
-// // const colorToGuessElement = document.querySelector('.color-to-guess');
-// // const colorOptionElements = document.querySelectorAll('.color-option');
-
-// let submarineHolder;
-
-// // Starts a round of the game.
-// function startRound() {
-    //   const randomSub = getRandomSubmarine();
-    //   // Picking a random "correct" color.
-    //   submarineHolder = randomIntegerUpTo(3);
-    //   // Setting "color to guess" text.
-    // //   const correctColorName = randomSub[submarineHolder].name;
-    // //   colorToGuessElement.innerHTML = correctColorName;
-
-    //   for (let i = 0; i < 4; i++) {
-        //     const submarine = randomSub[i];
-        //     // const colorOptionElement = colorOptionElements[i];
-        //     // colorOptionElement.style.backgroundColor = color.hexadecimal;
-        //   }
-        // }
-
-        // startRound();
-
-        // const guessFeedbackElement = document.querySelector('.guess-feedback');
-
-// function handleOptionClick(event) {
-//   const button = event.target;
-//   const clickedIndex = Number(button.getAttribute('data-index'));
-//   if (clickedIndex === submarineHolder) {
-//     guessFeedbackElement.innerHTML = "Hit!";
-//   } else {
-//     guessFeedbackElement.innerHTML = "Miss!";
-//   }
-// }
-
-// for (let i = 0; i < rows.length; i++) {
-//   const colorOptionElement = colorOptionElements[i];
-//   colorOptionElement.addEventListener(
-//     'click',
-//     handleOptionClick
-//   );
-// }
-
-
-
-
-
-// submarine.style.left = `${Math.random() * window.innerWidth}px`;
-// submarine.style.top = `${Math.random() * window.innerHeight}px`;
-// submarine.setAttribute('class', 'submarine');
-
-// setInterval(function () {
-//     submarine.style.left = `${Math.random() * gameboard.innerWidth}px`;
-//     submarine.style.top = `${Math.random() * gameboard.innerHeight}px`;
-// }, 1000);
-//doesnt work with gameboard.
-
-
-// setTimeout(function () {
-//   submarine.parentNode.removeChild(submarine);
-//   checkForWinner();     
-// }, 500);
-
-
-
-
-
-// for (let i = 0; i < 4; i++) {
-//     createSubmarine();
-// }
-
+// console.log(columns[0])
+    //array
 

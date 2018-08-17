@@ -1,18 +1,22 @@
 * {
     box-sizing: border-box;
+    text-align: center;
 }
 
 body{
     width: 600px;
-    /* height: 900px; */
+    /* height: 600px; */
     margin: 0 auto;
     background: #FFCD00;
+    text-shadow:  2px 2px #FF0000;
+    font-family: 'Hanalei Fill', cursive;
 }
 
 h1 {
     text-align: center; 
     margin: 20px auto;
     font-family: 'Hanalei Fill', cursive;
+    text-shadow:  2px 2px #FF0000;
     font-size: 46px;
 }
 
@@ -21,6 +25,9 @@ h1 {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    /* flex-shrink: 1;
+  flex-grow: 1; */
+  /* position:relative; */
  
 }
 
@@ -32,8 +39,17 @@ h1 {
     height: 100%;
     flex-direction: row;
     position: relative;
-    /* margin: 0 auto; */
+    
+    /* margin: 0;
+    flex-shrink: 1;
+  flex-grow: 1; */
 }
+.wrapper {
+    width: 100%;
+    margin: 0;
+    display: flex;
+  }
+
 
 .box {
     background-color: aquamarine;
@@ -41,6 +57,13 @@ h1 {
     width: 100px;
     height: 100px;
     border: 1px solid black;
+    color: #FF735D;
+    font-size: 22px;
+    text-shadow:  1px 1px rgb(81, 255, 0);
+    font-family: 'Marck Script', cursive;
+    text-align:center;
+
+
 }
 
 .sub.hidde{
@@ -72,6 +95,7 @@ h1 {
     font-size: 38px; 
     margin: 0 auto;
     display: flex;
+    text-shadow:  2px 2px #FF0000;
     font-family: 'Hanalei Fill', cursive;
 
 }
@@ -98,4 +122,7 @@ h3{
     margin: 0 auto;}
 .logs{
     margin: 0 auto;}
-    
+p{
+    font-family: 'Hanalei Fill', cursive;
+}
+
