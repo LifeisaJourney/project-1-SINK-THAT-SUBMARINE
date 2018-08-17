@@ -59,51 +59,41 @@ const gameboard = document.querySelector('.gameboard')
 
 
 // const submarine = document.createElement('div');
-
 // function createSubmarine() {
 //     submarine.classList.add('submarine');
 //     // document.querySelector('.sub.hidde').appendChild(submarine);
-
 //     return submarine;
 // }
-
-
 // function randomIntegerUpTo(max) {
 //     return Math.floor(Math.random() * (max + 1));
 // }
-
-
-
 
 const selectRowOrColumn = Math.floor(Math.random() * 2);
 const randomRowGenerator = Math.floor(Math.random() * 6);
 const randomColumnGenerator = Math.floor(Math.random() * 6);
 
 newArray = [columns, rows];
-
-const newVar = newArray[selectRowOrColumn];
-const abc = newVar[randomRowGenerator]
-const def = abc[randomColumnGenerator]
-console.log(abc)
-console.log(def)
-
+const newArraySelection = newArray[selectRowOrColumn];
+const aSpecificRow = newArraySelection[randomRowGenerator]
+const aSpecificBox = aSpecificRow[randomColumnGenerator]
+// console.log(aSpecificRow)
+// console.log(aSpecificBox)
 // console.log(newArray);
 
 let submarine = [];
-submarine.push(def);
+submarine.push(aSpecificBox);
+// console.log(submarine)
 
 // let boundary = [rows[0][5], rows[0][0], columns[0][5], columns[5][5]]
-
 // if (!boundary.includes(submarine[0])) {
 //     console.log(submarine);
 // }
 
 if (randomColumnGenerator === 5) {
-    submarine.push(abc[randomColumnGenerator - 1])
+    submarine.push(aSpecificRow[randomColumnGenerator - 1])
 } else {
-    submarine.push(abc[randomColumnGenerator + 1])
+    submarine.push(aSpecificRow[randomColumnGenerator + 1])
 }
-
 console.log(submarine)
 
 
@@ -111,54 +101,48 @@ console.log(submarine)
 
 let zeroVar = Number(submarine[0].dataset.index);
 let oneVar = Number(submarine[1].dataset.index);
-
 const guessFeedbackElement = document.querySelector('.guess-feedback');
-
 gameboard.addEventListener('click', function (event) {
     const button = event.target;
     console.log(button);
-
     const clickedIndex = Number(button.getAttribute('data-index'));
-
     console.log(clickedIndex);
-
     if (clickedIndex === Number(submarine[0].dataset.index) || clickedIndex === Number(submarine[1].dataset.index)) {
         guessFeedbackElement.innerHTML = "Hit!";
         button.classList.add('shot');
+        //remember to remove shot
     } else {
         guessFeedbackElement.innerHTML = "Miss!";
-
         if (zeroVar.includes(Number(columns[0].dataset.index)) && oneVar.includes(Number(columns[0].dataset.index))) {
             // Number(submarine[1].dataset.index) += 1;
             // Number(submarine[0].dataset.index) += 1;
             console.log(Number(submarine[0].dataset.index), Number(submarine[1].dataset.index));
-
-        } 
+        }
         // else if {
 
-        
 
 
-    }
 
-    // })    
+    }    
 });
 
 console.log(submarine[0], submarine[1]);
 console.log(submarine[0].dataset.index, submarine[1].dataset.index);
 console.log(zeroVar, oneVar);
-
 console.log('str', Number((columns[0][1]).dataset.index));
 
 
 // Number((columns[0][1]).dataset.index);
 // 6
+
 // typeof Number((columns[0][1]).dataset.index)
 // "number"
+
 // Number((columns[0]).dataset.index)
 // VM7024:1 Uncaught TypeError: Cannot read property 'index' of undefined
 //     at <anonymous>:1:29
-// (anonymous) @ VM7024:1
+
+
 // ((columns[0][1]).dataset.index)
 // "6"
 // typeof ((columns[0][1]).dataset.index)
