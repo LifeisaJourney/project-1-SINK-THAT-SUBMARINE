@@ -5,7 +5,6 @@
 
 body{
     width: 600px;
-    /* height: 600px; */
     margin: 0 auto;
     background: #FFCD00;
     text-shadow:  2px 2px #FF0000;
@@ -20,15 +19,10 @@ h1 {
     font-size: 46px;
 }
 
-
 .aside{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    /* flex-shrink: 1;
-  flex-grow: 1; */
-  /* position:relative; */
- 
 }
 
 .gameboard {
@@ -39,17 +33,13 @@ h1 {
     height: 100%;
     flex-direction: row;
     position: relative;
-    
-    /* margin: 0;
-    flex-shrink: 1;
-  flex-grow: 1; */
 }
+
 .wrapper {
     width: 100%;
     margin: 0;
     display: flex;
-  }
-
+}
 
 .box {
     background-color: aquamarine;
@@ -62,18 +52,6 @@ h1 {
     text-shadow:  1px 1px rgb(81, 255, 0);
     font-family: 'Marck Script', cursive;
     text-align:center;
-
-
-}
-
-.sub.hidde{
-    /* display: flex; */
-    position: absolute; 
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    /* gets the boxes into main*/
-
 }
 
 .submarine {
@@ -81,13 +59,7 @@ h1 {
     height: 100px;
     width: 100px;
     margin: 0px;
-    /* align-self: flex-start; */
-    /* order: 1; */
-    /* flex-grow: 2; */
-    /* flex-shrink: 1; */
-    /* turn it display: none */
     position: relative;
-    /* change to image/css for finishing touches */
 }
 
 .reset {
@@ -100,7 +72,6 @@ h1 {
 
 }
         
-        /* not hidden */
 .hidden {
     display: none;
 }
@@ -118,10 +89,7 @@ h3{
 .guess-feedback{
     margin: 0 auto; 
 }
-.submarines-left{
-    margin: 0 auto;}
-.logs{
-    margin: 0 auto;}
+
 p{
     font-family: 'Hanalei Fill', cursive;
 }
