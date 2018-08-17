@@ -19,12 +19,6 @@ h1 {
     font-size: 46px;
 }
 
-.aside{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .gameboard {
     display: flex;
     flex-wrap: wrap;
@@ -62,28 +56,9 @@ h1 {
     position: relative;
 }
 
-.reset {
-    text-align: center;
-    font-size: 38px; 
-    margin: 0 auto;
-    display: flex;
-    text-shadow:  2px 2px #FF0000;
-    font-family: 'Hanalei Fill', cursive;
-
-}
-        
-.hidden {
-    display: none;
-}
-
 .shot {
     margin: 0px;
     background-color: red;
-}
-
-h3{
-    font-family: 'Hanalei Fill', cursive;
-    margin: 0 auto;
 }
 
 .guess-feedback{
@@ -92,5 +67,6 @@ h3{
 
 p{
     font-family: 'Hanalei Fill', cursive;
+    font-size: 26px;
 }
 
