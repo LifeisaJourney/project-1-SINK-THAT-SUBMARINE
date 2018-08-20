@@ -20,6 +20,16 @@ function chooseDirectionIndex(length) {
   return Math.floor(Math.random() * length);
 }
 
+function move() {
+  if (submarine > 0 && submarine < 5) {
+    submarine += leftDownRight[chooseDirectionIndex(leftDownRight.length)];
+  } else if (submarine > 30 && submarine < 35) {
+    submarine += leftUpRight[chooseDirectionIndex(leftUpRight.length)];
+  } else if (submarine % 6 === 0 && submarine !== 0 && submarine !== 30) {
+    submarine += rightDownUp[chooseDirectionIndex(rightDownUp.length)];
+  } else if (submarine % 6 === 5 && submarine !== 5 && submarine !== 35) {
+    submarine += leftDownUp[chooseDirectionIndex(leftDownUp.length)];
+  } else if (submarine === 0) {
 
 const guessFeedbackElement = document.querySelector('.guess-feedback');
 gameboard.addEventListener('click', function (event) {
