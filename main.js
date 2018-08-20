@@ -28,7 +28,8 @@ const boxSelector = document.querySelectorAll('.box');
 const randomLocationGenerator = Math.floor(Math.random() * (boxSelector.length + 1));
 submarine = randomLocationGenerator;
 
-
+document.querySelector('.starting-location').innerHTML = `Starting position: ${submarine +1}`;
+move();
 
 function chooseDirectionIndex(length) {
   return Math.floor(Math.random() * length);
@@ -55,15 +56,16 @@ function move() {
     submarine += direction[chooseDirectionIndex(direction.length)];
   }
 
-const guessFeedbackElement = document.querySelector('.guess-feedback');
-gameboard.addEventListener('click', function (event) {
-  const button = event.target;
-  const clickedIndex = Number(button.getAttribute('data-index'));
-  if (clickedIndex === submarine) {
-    guessFeedbackElement.innerHTML = "HIT!";
-    button.classList.add('shot');
-    alert('WINNER!');
-  } else {
-    guessFeedbackElement.innerHTML = "MISS!";
-  }
-});
+  const guessFeedbackElement = document.querySelector('.guess-feedback');
+  gameboard.addEventListener('click', function (event) {
+    const button = event.target;
+    const clickedIndex = Number(button.getAttribute('data-index'));
+    if (clickedIndex === submarine) {
+      guessFeedbackElement.innerHTML = "HIT!";
+      button.classList.add('shot');
+    } else {
+      guessFeedbackElement.innerHTML = "MISS!";
+      move();
+    }
+  });
+  
