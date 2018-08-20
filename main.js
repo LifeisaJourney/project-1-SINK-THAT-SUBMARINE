@@ -58,14 +58,18 @@ function move() {
 }
 
 const guessFeedbackElement = document.querySelector('.guess-feedback');
-gameboard.addEventListener('click', function (event) {
+
+gameboard.addEventListener('click', gameClick);
+
+function gameClick(event) {
   const button = event.target;
   const clickedIndex = Number(button.getAttribute('data-index'));
   if (clickedIndex === submarine) {
-    guessFeedbackElement.innerHTML = "HIT!";
     button.classList.add('shot');
+    guessFeedbackElement.innerHTML = "HIT! Game Over!";
+    gameboard.removeEventListener('click', gameClick);
   } else {
     guessFeedbackElement.innerHTML = "MISS!";
     move();
   }
-});
+}

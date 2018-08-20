@@ -1,21 +1,44 @@
 * {
     box-sizing: border-box;
     text-align: center;
+    cursor: crosshair;
 }
 
 body{
     width: 600px;
     margin: 0 auto;
-    background: #FFCD00;
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
     font-family: 'Hanalei Fill', cursive;
+}
+
+@-webkit-keyframes colorchange {
+    0%{
+        color: #233D4D;
+    }
+    20%{
+        color: #E8C8C4;
+    }
+    40%{
+        color: #E86987;
+    }
+    60%{
+        color: #A1E869;
+    }
+    80%{
+        color: #B95CFF;
+    }
+    100%{
+        color: #6C83FF;
+    }
 }
 
 h1 {
     text-align: center; 
     margin: 20px auto;
-    font-family: 'Hanalei Fill', cursive;
+    font-family: 'Pirata One', cursive;
     text-shadow:  2px 2px #FF0000;
     font-size: 46px;
+    -webkit-animation: colorchange 3s infinite alternate;
 }
 
 .gameboard {
@@ -47,7 +70,6 @@ h1 {
 }
 
 .submarine {
-    background-color: green;
     height: 100px;
     width: 100px;
     margin: 0px;
@@ -57,23 +79,31 @@ h1 {
 .shot {
     margin: 0px;
     background-image: url("Explosion.png");
+    animation-name: fade;
+	animation-direction: alternate;
     background-position: center;
-    background-size:cover;
+    background-size: cover;
 }
 
-.guess-feedback{
-    margin: 0 auto; 
-    font-family: 'Marck Script', cursive;
-    font-size: 27px;
-    text-shadow:  1px 1px #FF0000;
-    text-align: center;
+.guess-feedback {
+    margin: 0; 
+    font-size: 25px;
+    text-align: left;
+    width: 50%;
+    -webkit-animation: colorchange 6s infinite alternate;
 }
 
 p {
     font-family: 'Marck Script', cursive;
-    font-size: 27px;
+    font-size: 25px;
     text-shadow:  1px 1px #FF0000;
-    text-align: center;
+}
+.starting-position {
+    font-size: 30px;
+    width: 30%;
+    margin: 10px 0 10px 0;
+    display: flex;
+    justify-content: right;
 }
 
 .data-index {
