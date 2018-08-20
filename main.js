@@ -6,15 +6,15 @@ for (let i = 0; i < 36; i++) {
   boxNumbers.classList.add(`box`, `box_${i}`);
   gameboard.appendChild(boxNumbers);
   boxNumbers.setAttribute(`data-index`, `${i}`);
-  let texts= document.createTextNode(`${i+1}`);
+  let texts = document.createTextNode(`${i + 1}`);
   boxNumbers.appendChild(texts);
 }
 
 let submarine = 0;
-for (let i = 0; i < boxSelector.length; i++) {
-  const randomLocationGenerator = Math.floor(Math.random() * (boxSelector.length + 1));
-  submarine = randomLocationGenerator;
-}
+
+const randomLocationGenerator = Math.floor(Math.random() * (boxSelector.length + 1));
+submarine = randomLocationGenerator;
+
 
 const guessFeedbackElement = document.querySelector('.guess-feedback');
 gameboard.addEventListener('click', function (event) {
