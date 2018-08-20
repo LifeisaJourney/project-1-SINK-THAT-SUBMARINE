@@ -16,6 +16,9 @@ The first position of the submarine is given. Then, the submarine will move in o
 
 ### The Game Link On GitHub 
 You can enjoy the game with the [Link to GitHub](https://git.generalassemb.ly/LifeH/project-1-SINK-THAT-SUBMARINE)! 
+<br>
 [Link to HTML](project-1-SINK-THAT-SUBMARINE/index.html)
+<br>
 [Link to JavaScript](project-1-SINK-THAT-SUBMARINE/main.js)
+<br>
 [Link to CSS](project-1-SINK-THAT-SUBMARINE/style.css)
