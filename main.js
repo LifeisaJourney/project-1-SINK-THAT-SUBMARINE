@@ -1,5 +1,5 @@
+let submarine = 0;
 const gameboard = document.querySelector('.gameboard');
-const boxSelector = document.querySelectorAll('.box');
 
 for (let i = 0; i < 36; i++) {
   let boxNumbers = document.createElement('div');
@@ -9,11 +9,16 @@ for (let i = 0; i < 36; i++) {
   let texts = document.createTextNode(`${i + 1}`);
   boxNumbers.appendChild(texts);
 }
-
-let submarine = 0;
+const boxSelector = document.querySelectorAll('.box');
 
 const randomLocationGenerator = Math.floor(Math.random() * (boxSelector.length + 1));
 submarine = randomLocationGenerator;
+
+
+
+function chooseDirectionIndex(length) {
+  return Math.floor(Math.random() * length);
+}
 
 
 const guessFeedbackElement = document.querySelector('.guess-feedback');
