@@ -9,8 +9,8 @@ The first position of the submarine is given. Then, the submarine will move in o
 1) Starting Position of the submarine is given. Then it moves to one of the adjacent corners either horizontally or vertiaclly. 
 2) No new tips will be given after the initial hint.
 3) Once you have clicked onto the grid you will either HIT or MISS! You will miss more often than hit.
-3) If you MISS, keep trying! The ship moves one block horizontally or vertically to a new location afterwards.
-4) Refresh the game to play again!
+4) If you MISS, keep trying! The ship moves one block horizontally or vertically to a new location afterwards.
+5) Refresh the game to play again!
 
 
 
