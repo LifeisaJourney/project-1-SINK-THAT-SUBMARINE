@@ -7,7 +7,6 @@ body{
     width: 600px;
     margin: 0 auto;
     background: #FFCD00;
-    text-shadow:  2px 2px #FF0000;
     font-family: 'Hanalei Fill', cursive;
 }
 
@@ -45,7 +44,6 @@ h1 {
     font-size: 22px;
     text-shadow:  1px 1px rgb(81, 255, 0);
     font-family: 'Marck Script', cursive;
-    text-align:center;
 }
 
 .submarine {
@@ -58,14 +56,28 @@ h1 {
 
 .shot {
     margin: 0px;
-    background-color: red;
+    background-image: url("Explosion.png");
+    background-position: center;
+    background-size:cover;
 }
 
 .guess-feedback{
     margin: 0 auto; 
+    font-family: 'Marck Script', cursive;
+    font-size: 27px;
+    text-shadow:  1px 1px #FF0000;
+    text-align: center;
 }
 
-p{
-    font-family: 'Hanalei Fill', cursive;
-    font-size: 26px;
+p {
+    font-family: 'Marck Script', cursive;
+    font-size: 27px;
+    text-shadow:  1px 1px #FF0000;
+    text-align: center;
 }
+
+.data-index {
+    font-size: 27px; 
+    text-align: center;
+}
+
