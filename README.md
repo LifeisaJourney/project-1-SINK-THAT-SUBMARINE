@@ -1,6 +1,5 @@
 # project-1-SINK-THAT-SUBMARINE
-An interactive JavaScript game of a submarine that you have to shoot down. This game comes with a twist! 
-The first position of the submarine is given. Then, the submarine will move in one of the directions (horizontally or vertically by one). You will have to guess which one of those direction the submarine has moved to. Then, everytime you miss, the submarine can move again. The highest chance of winning is at the beginning, since it could range from 25% to 50% of getting it right on the first move. The submarine is on a 1x1 block.
+"An interactive JavaScript game of a submarine that you have to shoot down. This game comes with a twist! The first position of the submarine is given. Then, the submarine will move in one of the directions (horizontally or vertically by one block). The player will have to guess which one of those direction the submarine has moved to. Then, everytime the player clicks and misses the target, the submarine can move again. The highest chance of winning is at the beginning, since it could range from 25% to 50% of getting it right on the first move. The submarine is on a 1x1 block."
 
 
 
